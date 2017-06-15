@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('institution/create', [
+	'uses'=>'CreateInstitutionController@create',
+	'as'=>'institution.create',
+]);
+
+Route::post('institution/create', [
+	'uses'=>'CreateInstitutionController@store',
+	'as'=>'institution.store',
+]);
